@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "strting arch setup script"
+echo "starting arch setup script"
 sleep 0.8
 
 #region methods
