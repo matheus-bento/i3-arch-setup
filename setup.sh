@@ -91,6 +91,6 @@ xdg-user-dirs-update
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copying wallpaper ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
-cp ./resources/. ~/Pictures
+cp -a ./resources/. ~/Pictures/
 
 echo "done!!!"
