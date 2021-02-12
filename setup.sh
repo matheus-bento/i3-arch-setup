@@ -82,6 +82,8 @@ echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ applying dotfiles ~~~~~~~~~~~~~~~~~~~~
 sleep 0.8
 cp -a ./dotfiles/. ~
 
+mv ~/.oh-my-zsh ~/.config
+
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~ creating xdg user dirs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 pacman_install xdg-user-dirs
@@ -89,6 +91,6 @@ xdg-user-dirs-update
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copying wallpaper ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
-cp -r ./resources ~/Pictures
+cp ./resources/. ~/Pictures
 
 echo "done!!!"
