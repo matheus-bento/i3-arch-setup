@@ -1,0 +1,16 @@
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABzwAAAPWAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Virtual1 Height 1080=972
+Virtual1 Height 600=561
+Virtual1 Width 1920=899
+Virtual1 Width 800=396
+Virtual1 XPosition=982
+Virtual1 YPosition=69
