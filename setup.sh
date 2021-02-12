@@ -25,7 +25,7 @@ yay_install() {
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
-pacman_install xorg sddm i3-gaps i3status dmenu picom virtualbox-guest-utils
+pacman_install xorg sddm i3-gaps i3status dmenu picom virtualbox-guest-utils gnu-free-fonts ttf-font-awesome
 sudo systemctl enable sddm
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing konsole ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
@@ -74,20 +74,20 @@ pacman_install feh
 sudo localectl set-keymap br-abnt2
 sudo timedatectl set-timezone America/Sao_Paulo
 
-echo -e "\n\n~~~~~~~~~~~~~~~~~~~~ setting 1920x1080 resolution on xorg ~~~~~~~~~~~~~~~~~~~~~~\n\n"
+echo -e "\n~~~~~~~~~~~~~~~~~~~~ setting 1920x1080 resolution on xorg ~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 sudo cp ./xorg/10-monitor.conf /etc/X11/xorg.conf.d
 
-echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ applying dotfiles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ applying dotfiles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 cp -a ./dotfiles/. ~
 
-echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~ creating xdg user dirs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~ creating xdg user dirs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 pacman_install xdg-user-dirs
 xdg-user-dirs-update
 
-echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copying wallpaper ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copying wallpaper ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 cp -r ./resources ~/Pictures
 
