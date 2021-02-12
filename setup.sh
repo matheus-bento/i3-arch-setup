@@ -25,8 +25,22 @@ yay_install() {
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
-pacman_install xorg sddm i3-gaps i3status dmenu picom virtualbox-guest-utils gnu-free-fonts ttf-font-awesome
+pacman_install xorg sddm i3-gaps i3status picom virtualbox-guest-utils gnu-free-fonts ttf-ubuntu-font-family ttf-font-awesome
 sudo systemctl enable sddm
+
+echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing yay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+sleep 0.8
+git clone https://aur.archlinux.org/yay ./temp
+
+cd ./temp
+makepkg -sir --noconfirm
+
+cd ..
+rm -rf ./temp
+
+echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing dmenu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+sleep 0.8
+yay_install dmenu-height
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing konsole ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
@@ -39,16 +53,6 @@ pacman_install zsh
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing oh-my-zsh ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
 bash -c "RUNZSH='no';$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing yay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
-sleep 0.8
-git clone https://aur.archlinux.org/yay ./temp
-
-cd ./temp
-makepkg -sir --noconfirm
-
-cd ..
-rm -rf ./temp
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing neovim ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
