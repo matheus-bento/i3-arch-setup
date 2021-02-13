@@ -1,0 +1,15 @@
+#!/bin/sh
+
+REPO=$1
+DESTINATION=$2
+
+if [ -z $REPO ]; then
+	echo "Usage: aur-clone (AUR package) [Destination]"
+	exit 1
+fi
+
+if [ -z $DESTINATION ]; then
+	git clone https://aur.archlinux.org/$REPO 
+else
+	git clone https://aur.archlinux.org/$REPO $DESTINATION
+fi

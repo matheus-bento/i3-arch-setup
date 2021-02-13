@@ -1,0 +1,15 @@
+#!/bin/sh
+
+REPO=$1
+DESTINATION=$2
+
+if [ -z $REPO ]; then
+	echo "Usage: github-clone (Repository) [Destination]"
+	exit 1
+fi
+
+if [ -z $DESTINATION ]; then
+	git clone https://github.com/$REPO 
+else
+	git clone https://github.com/$REPO $DESTINATION
+fi

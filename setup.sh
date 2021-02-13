@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "starting arch setup script"
 sleep 0.8
@@ -18,11 +18,26 @@ yay_install() {
     yay -S --noconfirm $PROGRAMS
 }
 
+aur_clone() {
+    REPOSITORY=$1
+    DESTINATION=$2
+
+    if [ -z $DESTINATION ]; then
+        git clone https://aur.archlinux.org/$REPOSITORY 
+    else
+        git clone https://aur.archlinux.org/$REPOSITORY $DESTINATION
+    fi
+}
+
 github_clone() {
     REPOSITORY=$1
-    DESTINATION=${2:-.}
+    DESTINATION=$2
 
-    git clone https://github.com/$REPOSITORY $DESTINATION
+    if [ -z $DESTINATION ]; then
+        git clone https://github.com/$REPOSITORY 
+    else
+        git clone https://github.com/$REPOSITORY $DESTINATION
+    fi
 }
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
@@ -32,7 +47,7 @@ sudo systemctl enable sddm
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing yay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
-git clone https://aur.archlinux.org/yay ./temp
+aur_clone yay ./temp
 
 cd ./temp
 makepkg -sir --noconfirm
@@ -59,7 +74,7 @@ pacman_install zsh
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing oh-my-zsh ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
-bash -c "RUNZSH='no';$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "RUNZSH='no';$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing neovim ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
@@ -112,5 +127,9 @@ xdg-user-dirs-update
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copying wallpaper ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 cp -a ./resources/. ~/Pictures/
+
+echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ copying scripts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+sleep 0.8
+cp -r ./scripts/ ~
 
 echo "done!!!"
