@@ -3,8 +3,6 @@
 echo "starting arch setup script"
 sleep 0.8
 
-#region methods
-
 pacman_install() {
     PROGRAMS=$@
     sudo pacman -S --noconfirm $PROGRAMS
@@ -20,9 +18,12 @@ yay_install() {
     yay -S --noconfirm $PROGRAMS
 }
 
-#endregion
+github_clone() {
+    REPOSITORY=$1
+    DESTINATION=${2:-.}
 
-#region installations
+    git clone https://github.com/$REPOSITORY $DESTINATION
+}
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
@@ -62,6 +63,16 @@ pacman_uninstall vim
 pacman_install neovim
 yay_install neovim-symlinks
 
+echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing neovim plugins ~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+sleep 0.8
+
+mkdir -p ~/.local/share/nvim/site/pack/vendor/start
+
+github_clone commentsong/CommentFrame.vim comment-frame
+github_clone preservim/nerdtree nerdtree
+github_clone vim-airline/vim-airline vim-airline 
+github_clone vim-airline/vim-airline-themes vim-airline-themes
+
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing neofetch ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
 pacman_install neofetch
@@ -73,8 +84,6 @@ pacman_install picom
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing feh ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
 pacman_install feh
-
-#endregion
 
 sudo localectl set-keymap br-abnt2
 sudo timedatectl set-timezone America/Sao_Paulo
