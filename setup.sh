@@ -27,7 +27,7 @@ github_clone() {
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
-pacman_install xorg sddm i3-gaps i3status picom virtualbox-guest-utils gnu-free-fonts ttf-ubuntu-font-family ttf-font-awesome
+pacman_install xorg sddm i3-gaps i3status picom virtualbox-guest-utils 
 sudo systemctl enable sddm
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing yay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
@@ -39,6 +39,11 @@ makepkg -sir --noconfirm
 
 cd ..
 rm -rf ./temp
+
+echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing fonts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+sleep 0.8
+pacman_install gnu-free-fonts ttf-ubuntu-font-family ttf-font-awesome
+yay_install powerline-fonts
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing dmenu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
