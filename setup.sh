@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "starting arch setup script"
 sleep 0.8
 
