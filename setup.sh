@@ -72,6 +72,7 @@ github_clone commentsong/CommentFrame.vim comment-frame
 github_clone preservim/nerdtree nerdtree
 github_clone vim-airline/vim-airline vim-airline 
 github_clone vim-airline/vim-airline-themes vim-airline-themes
+github_clone tpope/vim-fugitive vim-fugitive
 
 echo -e "\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing neofetch ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 sleep 0.8
