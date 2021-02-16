@@ -220,4 +220,4 @@ client.unfocused 	$cherry  $black  $cherry $cherry   $cherry
 
 exec zsh -c "feh --bg-scale ~/Pictures/wallpaper.png"
 exec --no-startup-id picom
-exec konsole 
+exec st 
