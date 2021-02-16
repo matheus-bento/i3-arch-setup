@@ -40,8 +40,21 @@ github_clone() {
     fi
 }
 
+$SETUP_DIR=$(pwd)
+
+mkdir ~/repo
+
+echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing yay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+sleep 0.8
+aur_clone yay ~/repo/yay
+
+cd ~/repo/yay
+makepkg -sir --noconfirm
+
+cd $SETUP_DIR
+
 source ./wm.sh
 source ./applications.sh
 source ./config.sh
 
-echo "done!!!"
+echo "done!"
