@@ -6,7 +6,7 @@ sudo cp $SETUP_DIR/xorg/10-monitor.conf /etc/X11/xorg.conf.d
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ applying dotfiles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
-cp -a tfiles/. ~
+cp -a $SETUP_DIR/dotfiles/. ~
 
 mv ~/.oh-my-zsh ~/.config
 
