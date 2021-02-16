@@ -42,6 +42,11 @@ github_clone() {
 
 SETUP_DIR=$(pwd)
 
+sudo localectl set-keymap br-abnt2
+
+sudo timedatectl set-timezone America/Sao_Paulo
+sudo timedatectl set-ntp true
+
 mkdir ~/repo
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing yay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"

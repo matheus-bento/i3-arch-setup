@@ -5,7 +5,7 @@ sleep 0.8
 git clone https://git.suckless.org/st ~/repo/st
 
 cd ~/repo/st
-curl -O https://st.suckless.org/patches/alpha/st-alpha-0.8.2.diff
+curl -O "https://st.suckless.org/patches/alpha/st-alpha-0.8.2.diff"
 
 git apply st-alpha-0.8.2.diff
 cp $SETUP_DIR/resources/st/config.def.h .
@@ -20,6 +20,7 @@ github_clone dudik/herbe ~/repo/herbe
 
 cd ~/repo/herbe
 cp $SETUP_DIR/resources/herbe/config.def.h config.def.h
+
 sudo make install
 
 cd $SETUP_DIR
@@ -65,6 +66,3 @@ pacman_install picom
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing feh ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 pacman_install feh
-
-sudo localectl set-keymap br-abnt2
-sudo timedatectl set-timezone America/Sao_Paulo
