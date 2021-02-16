@@ -1,7 +1,5 @@
 #!/bin/sh
 
-mkdir ~/repo
-
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing st ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 git clone https://git.suckless.org/st ~/repo/st
