@@ -2,8 +2,7 @@
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
-pacman_install xorg sddm i3-gaps i3status picom virtualbox-guest-utils 
-sudo systemctl enable sddm
+pacman_install xorg xorg-xinit i3-gaps i3status picom virtualbox-guest-utils 
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing fonts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
