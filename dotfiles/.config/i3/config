@@ -214,7 +214,7 @@ gaps inner 35
 for_window [class=".*"] border pixel 5
 
 #			border   backgr. text    indicator childborder 
-client.focused 		$cherry  $cherry $black  $cherry   $cherry
+client.focused 		$orange  $orange $black  $orange   $orange
 client.focused_inactive $cherry  $black  $cherry $cherry   $cherry
 client.unfocused 	$cherry  $black  $cherry $cherry   $cherry
 
