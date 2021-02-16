@@ -40,7 +40,7 @@ github_clone() {
     fi
 }
 
-$SETUP_DIR=$(pwd)
+SETUP_DIR=$(pwd)
 
 mkdir ~/repo
 
