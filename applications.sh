@@ -14,6 +14,13 @@ sudo make install
 
 cd $SETUP_DIR
 
+echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing alsa ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+sleep 0.8
+pacman_install alsa-lib alsa-plugins alsa-firmware alsa-utils
+
+amixer sset Master unmute
+amixer sset Master 75%
+
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing herbe ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
 github_clone dudik/herbe ~/repo/herbe
