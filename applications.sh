@@ -5,9 +5,12 @@ sleep 0.8
 git clone https://git.suckless.org/st ~/repo/st
 
 cd ~/repo/st
-curl -O "https://st.suckless.org/patches/alpha/st-alpha-0.8.2.diff"
 
-git apply st-alpha-0.8.2.diff
+curl -o alpha-diff "https://st.suckless.org/patches/alpha/st-alpha-0.8.2.diff"
+curl -o scroll-diff "https://st.suckless.org/patches/scrollback/st-scrollback-20201205-4ef0cbd.diff"
+
+git apply alpha-diff
+git apply scroll-diff
 cp $SETUP_DIR/resources/st/config.def.h .
 
 sudo make install
