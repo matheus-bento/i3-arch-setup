@@ -2,7 +2,7 @@
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing i3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
-pacman_install xorg xorg-xinit i3-gaps i3status picom virtualbox-guest-utils 
+pacman_install xorg xorg-xinit i3-gaps i3status picom mesa xf86-video-amdgpu 
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ installing fonts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 sleep 0.8
